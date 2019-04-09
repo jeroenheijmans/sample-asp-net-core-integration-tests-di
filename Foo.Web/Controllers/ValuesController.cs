@@ -15,9 +15,9 @@ namespace Foo.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<string> Get()
         {
-            return new string[] { barService.GetValue() };
+            return barService.GetValue();
         }
     }
 }
