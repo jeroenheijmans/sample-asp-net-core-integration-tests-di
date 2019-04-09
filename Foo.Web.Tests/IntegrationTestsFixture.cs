@@ -13,10 +13,7 @@ namespace Foo.Web.Tests
             
             builder.ConfigureTestServices(servicesConfiguration =>
             {
-                // TODO: Figure this out
-                // See also: https://stackoverflow.com/q/55599360/419956
-                servicesConfiguration.AddScoped<IBarService>(di
-                    => new DecoratedBarService(Server.Host.Services.GetRequiredService<IBarService>()));
+                servicesConfiguration.Decorate<IBarService, DecoratedBarService>();
             });            
         }
     }
